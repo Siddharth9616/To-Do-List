@@ -27,5 +27,6 @@ urlpatterns = [
     path('edit_todo/<int:srno>', views.edit_todo, name='edit_todo'),
     path('delete_todo/<int:srno>', views.delete_todo, name='delete_todo'),
     path('toggle/<int:srno>', views.toggle_task, name='toggle_task'),
+    path('clear_completed/', views.clear_completed, name='clear_completed'),
     path('signout/', views.signout, name='signout'),
 ]

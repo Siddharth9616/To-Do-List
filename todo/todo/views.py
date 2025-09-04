@@ -75,6 +75,12 @@ def toggle_task(request, srno):
     task.save()
     return redirect('/todopage')
 
+@login_required(login_url='/login')
+def clear_completed(request):
+    models.TODOO.objects.filter(user=request.user, completed=True).delete()
+    messages.success(request, "All completed tasks cleared!")
+    return redirect('/todopage')
+
 def signout(request):
     logout(request)
     return redirect('/login')
