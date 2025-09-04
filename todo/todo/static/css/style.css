@@ -1,0 +1,62 @@
+/* Add this to your CSS file (e.g., style.css) */
+
+.Todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f8f8;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.Todo h5 {
+    margin: 0;
+    font-weight: 600;
+    color: #6c5ce7;
+}
+
+.Todo p {
+    flex-grow: 1;
+    margin: 0 20px;
+    font-size: 1rem;
+}
+
+.Todo i {
+    color: #888;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.Todo i:hover {
+    color: #e74c3c;
+}
+
+.heading-with-logout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* space-between or flex-end or center */
+    margin-bottom: 20px;
+}
+
+.heading {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.sign {
+    font-size: 1.4rem;
+    color: #6c5ce7;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.sign:hover {
+    color: #4834d4;
+}
+
+
