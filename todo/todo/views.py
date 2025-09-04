@@ -39,12 +39,15 @@ def todo(request):
         title=request.POST.get('title')
         obj=models.TODOO(title=title, user=request.user)
         obj.save()
-        res=models.TODOO.objects.filter(user=request.user).order_by('-date')
         messages.success(request, 'Task added successfully!')
         
-        return redirect('/todopage',{'res':res})
-    res=models.TODOO.objects.filter(user=request.user).order_by('-date')
-    return render(request, 'todo.html',{'res':res})
+        return redirect('/todopage')
+    pending = TODOO.objects.filter(user=request.user, completed=False).order_by('-date')
+    completed = TODOO.objects.filter(user=request.user, completed=True).order_by('-date')
+    return render(request, 'todo.html', {
+        'pending': pending,
+        'completed': completed
+    })
 
 @login_required(login_url='/login')
 def edit_todo(request, srno):
